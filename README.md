@@ -36,15 +36,15 @@ After Downloading ShEx.js
 
 - A:  Set PATH for your machine
 
-export PATH="$PATH:/…/shex.js/packages/shex-cli/bin"
+      export PATH="$PATH:/…/shex.js/packages/shex-cli/bin"
 
 - B:  Load the ShEx files using the Validate command
 
-validate --human -x /…/ShExValidation/fhir_rdf_validation/ShExSchemas/R5Plus/Organization.shex --diagnose -S http://localhost:8088/validate
+      validate --human -x /…/ShExValidation/fhir_rdf_validation/ShExSchemas/R5Plus/Organization.shex --diagnose -S http://localhost:8088/validate
 
 - C:  Use a CURL command like the one below to validate your FHIR RDF resources of interest
 
-curl -i http://localhost:8088/validate -F "data=@/usr/local/miserver/shexdir/tests/obs_test_fault_1.ttl"  -F "queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Observation>"
+      curl -i http://localhost:8088/validate -F "data=@/usr/local/miserver/shexdir/tests/obs_test_fault_1.ttl"  -F "queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Observation>"
 
 
 ### NOTES
