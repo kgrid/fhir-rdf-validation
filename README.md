@@ -30,32 +30,19 @@ The steps of this specific technical FHIR RDF data resource validation process a
 
 <4> Load a text file with the HL7 FHIR RDF Resource to be validated in TTL format. Two example text files are included in this github repository.
 
-<5> Validate the Resource via an API call to the ShEx server
-
-
-
-
-
-USING ShEx VALIDATOR for FHIR RDF Validation
-
-
-
-BEFORE STARTING WITH ShEx VALIDATION, SEE:
-https://shex.io/ 
-https://github.com/shexjs/shex.js 
-https://pmc.ncbi.nlm.nih.gov/articles/PMC10841909/ 
+<5> Validate the Resource via a call to the ShEx server by using the following technical steps and commands.
 
 After Downloading ShEx.js
 
-STEP 1:  Set PATH
+- A:  Set PATH
 
 export PATH="$PATH:/…/shex.js/packages/shex-cli/bin"
 
-STEP 2:  Run Validate Command
+- B:  Run Validate Command
 
 validate --human -x /…/ShExValidation/fhir_rdf_validation/ShExSchemas/R5Plus/Organization.shex --diagnose -S http://localhost:8088/validate
 
-STEP 3:  Example of Validating FHIR Data with this Command
+- Example of Validating FHIR Data with this Command
 
 curl -i http://localhost:8088/validate 
      
@@ -70,3 +57,9 @@ curl -i http://localhost:8088/validate -F"data=@/Users/ajf/Desktop/71323f/ShExVa
 -F"queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Account>"
 
 ### NOTES
+
+FOR MORE INFORMATION ABOUT ShEx VALIDATION, SEE:
+
+[ShEx webpage](https://shex.io/) 
+
+[Relevant publication](https://pmc.ncbi.nlm.nih.gov/articles/PMC10841909/) 
