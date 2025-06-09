@@ -34,27 +34,18 @@ The steps of this specific technical FHIR RDF data resource validation process a
 
 After Downloading ShEx.js
 
-- A:  Set PATH
+- A:  Set PATH for your machine
 
 export PATH="$PATH:/…/shex.js/packages/shex-cli/bin"
 
-- B:  Run Validate Command
+- B:  Load the ShEx files using the Validate command
 
 validate --human -x /…/ShExValidation/fhir_rdf_validation/ShExSchemas/R5Plus/Organization.shex --diagnose -S http://localhost:8088/validate
 
-- Example of Validating FHIR Data with this Command
+- C:  Use a CURL command like the one below to validate your FHIR RDF resources of interest
 
-curl -i http://localhost:8088/validate 
-     
--F "data=@/.../ShExValidation/fhir_rdf_validation/FHIR_RDF_Examples/R5/file_to_be_validated"      
+curl -i http://localhost:8088/validate -F "data=@/usr/local/miserver/shexdir/tests/obs_test_fault_1.ttl"  -F "queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Observation>"
 
--F 
-"queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Organization>"
-
-
-EX: 
-curl -i http://localhost:8088/validate -F"data=@/Users/ajf/Desktop/71323f/ShExValidation/fhir_rdf_validation/FHIR_RDF_Examples/R5/account-example.ttl"      
--F"queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Account>"
 
 ### NOTES
 
