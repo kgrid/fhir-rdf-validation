@@ -1,0 +1,42 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+[a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ID_assigned_by_pipeline"] ; #
+  fhir:target ( [
+     fhir:reference [ fhir:v "ObservationResource/ID_assigned_by_pipeline" ]
+  ] ) ; #
+  fhir:recorded [ fhir:v "2011-03-04T08:30:00+11:00"^^xsd:dateTime] ; #
+  fhir:activity [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "originate" ]
+     ] )
+  ] ; #
+  fhir:patient [
+     fhir:reference [ fhir:v "Patient/pat2" ]
+  ] ; #
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "assembler" ] ;
+         fhir:display [ fhir:v "Assembler" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:reference [ fhir:v "Organization/CAMH" ]
+     ]
+  ] ) ; #
+  fhir:entity ( [
+      fhir:what [
+        fhir:reference [fhir:v "name_of_pipline"  ]
+      ] ;
+      fhir:role [fhir:v "instantiates" ]
+  ] );
+] . #
