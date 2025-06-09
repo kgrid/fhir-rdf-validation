@@ -1,0 +1,39 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+[a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PIPELINE_RESOURCE_IDENTIFIER"] ; #
+  fhir:status [ fhir:v "final"] ; #    Result computed is final
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "44262-4" ] ; #    Note: Deprecated
+       fhir:display [ fhir:v "PHQ-9 interpretation" ]
+     ] ) #    Kind of observation = Computed Interpretation of a PHQ-9 Score for a Patient
+  ] ; #
+  fhir:subject [
+     fhir:reference [ fhir:v "NEXUS_PATIENT_ID" ]
+  ] ; #
+  fhir:issued [ fhir:v "2013-04-04T14:34:00+01:00"^^xsd:dateTime] ; #  FROM PIPELINE
+  fhir:performer ( [
+     fhir:reference [ fhir:v "Organization/CAMH_PIPELINE_1" ] ;
+     fhir:display [ fhir:v "CAMH_PIPELINE_1" ]
+  ] ) ; #
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "21"^^xsd:decimal ]  #  PHQ9 ranges from 0 to 27 with cutpoints at 5, 10, 15, and 20
+  ] ; #
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:display [ fhir:v "Proposed Treatment Actions - Immediate initiation of pharmacotherapy and, if severe impairment or poor response to therapy, expedited  referral to a mental health specialist for psychotherapy and/or collaborative management" ]
+     ] [
+       fhir:system [ fhir:v "https://www.hiv.uw.edu/page/mental-health-screening/phq-9"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "Severe" ]
+     ] )
+  ] ) ] .
