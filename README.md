@@ -5,6 +5,8 @@ We documented and followed a consistent process to validate instances of the HL7
 
 The steps of this technical process are below. 
 
+Note:  ShEx.js required us first to serialize our FHIR RDF resources in TTL before validating them. 
+
 Technical Steps to Validate HL7 FHIR RDF Resources
 
 <1> Clone ShEx.js from its GitHub repository and Install ShEx.js
