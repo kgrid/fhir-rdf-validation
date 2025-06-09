@@ -53,4 +53,4 @@ FOR MORE INFORMATION ABOUT ShEx VALIDATION, SEE:
 
 [ShEx webpage](https://shex.io/) 
 
-[Relevant publication](https://pmc.ncbi.nlm.nih.gov/articles/PMC10841909/) 
+[Shape Expressions (ShEx) Schemas for the FHIR R5 Specification](https://pmc.ncbi.nlm.nih.gov/articles/PMC10841909/) 
