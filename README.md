@@ -1,5 +1,14 @@
 # fhir-rdf-validation
+
 This repository contains information and files from work to validate FHIR RDF resources.
+
+## INTRODUCTION
+
+The following instructions and notes are shared to assist people wanting to confirm that the FHIR RDF resources used for any project conform to the HL7 FHIR RDF standard for FHIR data resource types.  
+
+The tool used here to programmatically confirm and validate FHIR RDF resources is the [ShEx.js tool](https://github.com/shexjs/shex.js). 
+
+## GENERAL INSTRUCTIONS
 
 We documented and followed a consistent process to validate instances of the HL7 FHIR RDF Provenance and Observation resources. 
 
@@ -55,4 +64,4 @@ EX:
 curl -i http://localhost:8088/validate -F"data=@/Users/ajf/Desktop/71323f/ShExValidation/fhir_rdf_validation/FHIR_RDF_Examples/R5/account-example.ttl"      
 -F"queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Account>"
 
-
+### NOTES
