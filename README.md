@@ -20,3 +20,39 @@ Technical Steps to Validate HL7 FHIR RDF Resources
 <5> Validate the Resource via an API call to the ShEx server
 
 More information is available in the document titled ____
+
+
+USING ShEx VALIDATOR for FHIR RDF Validation
+
+
+
+BEFORE STARTING WITH ShEx VALIDATION, SEE:
+https://shex.io/ 
+https://github.com/shexjs/shex.js 
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10841909/ 
+
+After Downloading ShEx.js
+
+STEP 1:  Set PATH
+
+export PATH="$PATH:/…/shex.js/packages/shex-cli/bin"
+
+STEP 2:  Run Validate Command
+
+validate --human -x /…/ShExValidation/fhir_rdf_validation/ShExSchemas/R5Plus/Organization.shex --diagnose -S http://localhost:8088/validate
+
+STEP 3:  Example of Validating FHIR Data with this Command
+
+curl -i http://localhost:8088/validate 
+     
+-F "data=@/.../ShExValidation/fhir_rdf_validation/FHIR_RDF_Examples/R5/file_to_be_validated"      
+
+-F 
+"queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Organization>"
+
+
+EX: 
+curl -i http://localhost:8088/validate -F"data=@/Users/ajf/Desktop/71323f/ShExValidation/fhir_rdf_validation/FHIR_RDF_Examples/R5/account-example.ttl"      
+-F"queryMap={FOCUS fhir:nodeRole fhir:treeRoot}@<Account>"
+
+
