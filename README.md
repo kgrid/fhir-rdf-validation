@@ -2,11 +2,18 @@
 
 This repository contains information and files from work to validate FHIR RDF resources.
 
+Authors:
+
+Allen Flynn, ajflynn@umich.edu
+Avanti Paturkar, avantip@umich.edu
+
 ### INTRODUCTION
 
 The following instructions and notes are shared to assist people wanting to confirm that the FHIR RDF resources used for any project conform to the HL7 FHIR RDF standard for FHIR data resource types.  
 
 The tool used here to programmatically confirm and validate FHIR RDF resources is the [ShEx.js tool](https://github.com/shexjs/shex.js). 
+
+In addition to the General Instructions below, there are two Microsoft Word documents that include notes about the FHIR RDF resource validation process. 
 
 ### GENERAL INSTRUCTIONS
 
