@@ -2,33 +2,38 @@
 
 This repository contains information and files from work to validate FHIR RDF resources.
 
-## INTRODUCTION
+### INTRODUCTION
 
 The following instructions and notes are shared to assist people wanting to confirm that the FHIR RDF resources used for any project conform to the HL7 FHIR RDF standard for FHIR data resource types.  
 
 The tool used here to programmatically confirm and validate FHIR RDF resources is the [ShEx.js tool](https://github.com/shexjs/shex.js). 
 
-## GENERAL INSTRUCTIONS
+### GENERAL INSTRUCTIONS
 
-We documented and followed a consistent process to validate instances of the HL7 FHIR RDF Provenance and Observation resources. 
+We documented and followed a consistent process to validate instances of the HL7 FHIR RDF data types.  
 
-The steps of this technical process are below. 
+We used this process to validate instances of FHIR RDF Provenance and Observation resources. 
 
-Note:  ShEx.js required us first to serialize our FHIR RDF resources in TTL before validating them. 
+Example FHIR RDF Provenance and Observation resources are available in this repository in the [examples folder](https://github.com/kgrid/fhir-rdf-validation/tree/main/examples).
 
-Technical Steps to Validate HL7 FHIR RDF Resources
+In general, the validation process involves first implementing a software tool like ShEx.js for FHIR RDF resource validation, and then running the tool to identify any errors in the structure of the FHIR RDF resources of interest.
+
+### STEP BY STEP PROCEDURE
+
+The steps of this specific technical FHIR RDF data resource validation process are below. 
 
 <1> Clone ShEx.js from its GitHub repository and Install ShEx.js
 
 <2> Initiate the ShEx.js server
 
-<3> Load the ShEx.js server with HL7 FHIR RDF Shape Expression Schemas35 with the needed resource validation constraints
+<3> Load the ShEx.js server with [HL7 FHIR RDF Shape Expression Schemas](https://github.com/fhircat/ShExValidation) with the needed resource validation constraints.  We used the [R5Plus schemas](https://github.com/fhircat/ShExValidation/tree/main/fhir_rdf_validation/ShExSchemas/R5Plus) provided in the fhircat repo.
 
-<4> Load a text file with the HL7 FHIR RDF Resource to be validated in TTL format
+<4> Load a text file with the HL7 FHIR RDF Resource to be validated in TTL format. Two example text files are included in this github repository.
 
 <5> Validate the Resource via an API call to the ShEx server
 
-More information is available in the document titled ____
+
+
 
 
 USING ShEx VALIDATOR for FHIR RDF Validation
